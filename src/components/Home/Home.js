@@ -20,12 +20,12 @@ const Home=()=>{
 
     /** @type React.MutableRefObject<HTMLInputElement> */
     const destinationRef = useRef();
+    // console.log(API_KEY);
 
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey: API_KEY,
         libraries: libraries,
     });
-
 
     const center = {
         lat: -3.745,
@@ -60,7 +60,7 @@ const Home=()=>{
         };
 
         directionsService.route(request,await function(result, status) {
-            if(status == 'OK') {
+            if(status === 'OK') {
               directionsRenderer.setDirections(result);
               console.log(result);
               setDistance(result.routes[0].legs[0].distance.text);
