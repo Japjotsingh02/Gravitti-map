@@ -60,7 +60,7 @@ const Home=()=>{
         directionsService.route(request,await function(result, status) {
             if(status === 'OK') {
               directionsRenderer.setDirections(result);
-              console.log(result);
+            //   console.log(result);
               setDistance(result.routes[0].legs[0].distance.text);
             }
             else{
@@ -68,7 +68,7 @@ const Home=()=>{
             }
         });
         directionsRenderer.setMap(map);
-        console.log(distance);
+        // console.log(distance);
         // setDirectionResponse()
     }
 
