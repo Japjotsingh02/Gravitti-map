@@ -3,7 +3,6 @@ import logo from "../../images/Graviti Logo 1.svg";
 import location from "../../images/placeholder 1.svg";
 import { Form, Head, Image, Location, Main, MapInfo } from './Home.style';
 import { GoogleMap, useJsApiLoader,Autocomplete, Marker} from '@react-google-maps/api';
-import { API_KEY } from '../../config';
 
 const libraries=["places"];
 
@@ -20,10 +19,9 @@ const Home=()=>{
 
     /** @type React.MutableRefObject<HTMLInputElement> */
     const destinationRef = useRef();
-    // console.log(API_KEY);
 
     const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: API_KEY,
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_KEY,
         libraries: libraries,
     });
 
